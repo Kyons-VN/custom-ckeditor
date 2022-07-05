@@ -41,6 +41,9 @@
     "build-dev": "webpack --mode development"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-font": "^34.0.0",
+    "@ckeditor/ckeditor5-remove-format": "^34.2.0",
+    "@ckeditor/ckeditor5-source-editing": "^34.0.0",
     "@wiris/mathtype-ckeditor5": "^7.28.0"
   }
 }
