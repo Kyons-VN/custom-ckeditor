@@ -25,6 +25,8 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js';
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 import SourceEditing from '@ckeditor/ckeditor5-source-editing/src/sourceediting';
+import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import SpecialCharactersEssentials from '@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials';
 import Table from '@ckeditor/ckeditor5-table/src/table.js';
 import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
 import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
@@ -105,6 +107,9 @@ Editor.builtinPlugins = [
   RemoveFormat,
   SimpleUploadAdapter,
   SourceEditing,
+  SpecialCharacters,
+  SpecialCharactersEssentials,
+  SpecialCharactersExtended,
   Table,
   TableCellProperties,
   TableProperties,
@@ -137,6 +142,7 @@ Editor.defaultConfig = {
       'undo',
       'redo',
       'MathType',
+      'specialCharacters',
     ],
   },
   language: 'en',
@@ -215,5 +221,15 @@ Editor.defaultConfig = {
     },
   },
 };
+
+function SpecialCharactersExtended(editor) {
+  editor.plugins.get('SpecialCharacters').addItems('Mathematical', [
+    { title: 'alpha', character: 'α' },
+    { title: 'beta', character: 'β' },
+    { title: 'gamma', character: 'γ' },
+    { title: 'Pi', character: 'π' },
+    { title: 'Omega', character: 'Ω' },
+  ]);
+}
 
 export default Editor;
