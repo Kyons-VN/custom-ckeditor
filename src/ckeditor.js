@@ -5,6 +5,7 @@
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat.js';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic.js';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote.js';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices.js';
 import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
@@ -97,6 +98,7 @@ Editor.builtinPlugins = [
   ImageUpload,
   Indent,
   Italic,
+  Underline,
   Link,
   List,
   ListProperties,
@@ -128,6 +130,7 @@ Editor.defaultConfig = {
       '|',
       'bold',
       'italic',
+      'underline',
       'link',
       'removeFormat',
       'bulletedList',

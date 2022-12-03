@@ -109,3 +109,10 @@ customcaption,
 .table table tbody tr td:last-child {
   border-right: 1px solid #b6e5ff;
 }
+.ck-content ul {
+  list-style-type: disc;
+}
+/* ckeditor5-list/theme/liststyles.css */
+.ck-content ul ul {
+  list-style-type: circle;
+}
