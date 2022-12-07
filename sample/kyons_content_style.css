@@ -124,7 +124,7 @@ customcaption,
   .ck-content .image-inline.image-style-align-right,
   .ck-content .image.image-style-block-align-left,
   .ck-content .image.image-style-block-align-right,
-  .ck-content .image.image_resized {
+  .ck-content .image_resized {
     float: none;
     width: 100% !important;
     max-width: 100%;
