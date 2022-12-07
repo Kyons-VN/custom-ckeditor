@@ -116,3 +116,20 @@ customcaption,
 .ck-content ul ul {
   list-style-type: circle;
 }
+@media (max-width: 767px) {
+  .ck-content .image.image-style-side,
+  .ck-content .image.image-style-align-right,
+  .ck-content .image.image-style-align-left,
+  .ck-content .image-inline.image-style-align-left,
+  .ck-content .image-inline.image-style-align-right,
+  .ck-content .image.image-style-block-align-left,
+  .ck-content .image.image-style-block-align-right,
+  .ck-content .image.image_resized {
+    float: none;
+    width: 100% !important;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    clear: both;
+  }
+}
