@@ -3,11 +3,9 @@
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
-import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
-import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
-import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
-import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
-import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
+import { Bold, Italic, Underline } from '@ckeditor/ckeditor5-basic-styles';
+import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
+import { CloudServices } from '@ckeditor/ckeditor5-cloud-services';
 import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
@@ -21,6 +19,7 @@ import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
+import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties';
@@ -35,9 +34,11 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
 import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
-import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+import { SimpleUploadAdapter } from '@ckeditor/ckeditor5-upload';
 import MathType from '@wiris/mathtype-ckeditor5';
+import AddSpacingPlugin from './addspacingplugin';
 import CustomColorPlugin from './customcolorplugin';
+import CustomFigureAttributes from './CustomFigureAttributes';
 
 const customColorPalette = [
   {
@@ -87,6 +88,7 @@ class Editor extends ClassicEditor {}
 // Plugins to include in the build.
 Editor.builtinPlugins = [
   Autoformat,
+  AddSpacingPlugin,
   BlockQuote,
   Bold,
   CloudServices,
@@ -103,6 +105,7 @@ Editor.builtinPlugins = [
   ImageBlockEditing,
   ImageInlineEditing,
   Indent,
+  IndentBlock,
   Italic,
   Underline,
   Link,
@@ -122,12 +125,14 @@ Editor.builtinPlugins = [
   TableCellProperties,
   TableProperties,
   TableToolbar,
+  CustomFigureAttributes,
 ];
 
 // Editor configuration.
 Editor.defaultConfig = {
   toolbar: {
     items: [
+      'addspacing',
       'sourceEditing',
       '|',
       'heading',
@@ -178,19 +183,19 @@ Editor.defaultConfig = {
       },
       {
         name: 'resizeImage:100',
-        value: '50',
+        value: '30',
         label: 'Small size',
         // Note: add the "icon" property if you're configuring a standalone button.
       },
       {
         name: 'resizeImage:600',
-        value: '70',
+        value: '50',
         label: 'Medium size',
         // Note: add the "icon" property if you're configuring a standalone button.
       },
       {
         name: 'resizeImage:1024',
-        value: '100',
+        value: '70',
         label: 'Large size',
         // Note: add the "icon" property if you're configuring a standalone button.
       },

@@ -116,6 +116,13 @@ customcaption,
 .ck-content ul ul {
   list-style-type: circle;
 }
+.ck-content ol > li:has(ul):not(:last-child),
+.ck-content ol li:has(ol):not(:last-child) {
+  margin-bottom: 20px;
+}
+.space-above {
+  margin-top: 1rem;
+}
 @media (max-width: 767px) {
   .ck-content .image.image-style-side,
   .ck-content .image.image-style-align-right,

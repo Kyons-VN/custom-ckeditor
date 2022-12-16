@@ -20,6 +20,7 @@ export default class CustomColorPlugin extends Plugin {
       'hsl(202, 100%, 91%)': 'text-lightBlue6',
     });
   }
+
   static get pluginName() {
     return 'CustomColorPlugin';
   }
