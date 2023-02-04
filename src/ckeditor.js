@@ -272,6 +272,12 @@ Editor.defaultConfig = {
       startIndex: true,
     },
   },
+  indentBlock: {
+    classes: [
+      'ml-10', // First step - smallest indentation.
+      'ml-20', // Last step - biggest indentation.
+    ],
+  },
 };
 
 function SpecialCharactersExtended(editor) {
