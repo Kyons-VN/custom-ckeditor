@@ -123,6 +123,12 @@ customcaption,
 .space-above {
   margin-top: 1rem;
 }
+.ck-content .ml-10 {
+  margin-left: 40px;
+}
+.ck-content .ml-20 {
+  margin-left: 80px;
+}
 @media (max-width: 767px) {
   .ck-content .image.image-style-side,
   .ck-content .image.image-style-align-right,
